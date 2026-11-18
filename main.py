@@ -42,11 +42,16 @@ def run():
             if not all_tasks:
                 print("  No tasks recorded yet.")
             else:
-                print(f"\n  {'ID':<5} {'Status':<12} {'Title'}")
-                print("  " + "-" * 40)
+                print(f"\n  {'ID':<5} {'Status':<14} {'Title'}")
+                print("  " + "-" * 44)
                 for t in all_tasks:
-                    badge = "[Done]" if t.completed else "[Open]"
-                    print(f"  {t.task_id:<5} {badge:<12} {t.title}")
+                    if t.completed:
+                        badge = "[Completed]"
+                    else:
+                        badge = "[Pending]"
+                    print(f"  {t.task_id:<5} {badge:<14} {t.title}")
+                    if t.description:
+                        print(f"        -> {t.description}")
 
         elif choice == "3":
             try:
