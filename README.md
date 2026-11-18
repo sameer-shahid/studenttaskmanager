@@ -3,7 +3,7 @@
 A Python console application for managing student tasks, built with standard Git workflows and GitHub DevOps practices.
 
 ## Project Status
-Project status: Planning
+Project status: Testing and QA Phase
 
 ## Features
 - Add new tasks with title and description
