@@ -84,10 +84,19 @@ class TaskManager:
         return None
 
     def complete_task(self, task_id):
-        """Mark a task as completed. Returns True on success, False if not found."""
+        """Mark a task as completed and record the timestamp.
+
+        Args:
+            task_id: Numeric identifier of the task to complete.
+
+        Returns:
+            True if the task was found and marked complete, False otherwise.
+        """
         task = self.find_task(task_id)
         if task is None:
             return False
+        if task.completed:
+            return True  # already completed, no-op
         task.completed = True
         task.completed_at = datetime.now().isoformat()
         self._save_tasks()
