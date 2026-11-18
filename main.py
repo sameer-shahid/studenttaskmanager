@@ -66,7 +66,10 @@ def run():
         elif choice == "4":
             try:
                 tid = int(input("Task ID to delete: ").strip())
-                if mgr.delete_task(tid):
+                confirm = input(f"  Confirm deletion of task #{tid}? (y/n): ").strip().lower()
+                if confirm != "y":
+                    print("  Deletion cancelled.")
+                elif mgr.delete_task(tid):
                     print(f"  -> Task #{tid} deleted.")
                 else:
                     print(f"  ** Task #{tid} not found.")
