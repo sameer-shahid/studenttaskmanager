@@ -1,0 +1,49 @@
+===== MERGE CONFLICT - BEFORE RESOLUTION =====
+Date: Wed Nov 18 12:38:09 PKT 2026
+
+--- git status ---
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+--- README.md with conflict markers ---
+# Student Task Manager
+
+A Python console application for managing student tasks, built with standard Git workflows and GitHub DevOps practices.
+
+## Project Status
+<<<<<<< HEAD
+Project status: Active Development
+=======
+Project status: Testing and QA Phase
+>>>>>>> conflict-branch-b
+
+## Features
+- Add new tasks with title and description
+- Display all tasks with status indicators
+- Mark tasks as completed
+- Delete tasks by ID
+- Persistent JSON-based storage
+
+## Setup
+```bash
+git clone https://github.com/sameer-shahid/studenttaskmanager.git
+cd studenttaskmanager
+python3 main.py
+```
+
+## Running Tests
+```bash
+python3 -m unittest discover -s tests -v
+```
+

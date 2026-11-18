@@ -1,0 +1,41 @@
+test (3.12)	Run Automated Unit Tests	﻿2026-11-18T07:42:45.4218403Z ##[group]Run python -m unittest discover -s tests -v
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.4219358Z ^[[36;1mpython -m unittest discover -s tests -v^[[0m
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5928563Z shell: /usr/bin/bash -e {0}
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5929123Z env:
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5929379Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5929836Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5930206Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5930586Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5930919Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5931244Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:45.5931571Z ##[endgroup]
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2896540Z test_add_task_success (test_task_manager.TestTaskManager.test_add_task_success)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2897408Z Test adding a task with valid title and description. ... ok
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2898297Z test_add_task_validation_error (test_task_manager.TestTaskManager.test_add_task_validation_error)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2899265Z Test that empty or whitespace-only titles raise ValueError. ... ok
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2899835Z test_complete_task_success (test_task_manager.TestTaskManager.test_complete_task_success)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2901186Z Test marking a task as completed. ... ok
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2901793Z test_delete_task_non_existent (test_task_manager.TestTaskManager.test_delete_task_non_existent)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2902475Z Test deleting a non-existent task returns False. ... ok
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2903001Z test_delete_task_success (test_task_manager.TestTaskManager.test_delete_task_success)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2905066Z Test deleting an existing task by identifier. ... ok
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2905854Z test_intentional_failure_for_ci_demonstration (test_task_manager.TestTaskManager.test_intentional_failure_for_ci_demonstration)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2908483Z Deliberate failing assertion to demonstrate CI failure reporting. ... FAIL
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2909063Z 
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2909312Z ======================================================================
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2910482Z FAIL: test_intentional_failure_for_ci_demonstration (test_task_manager.TestTaskManager.test_intentional_failure_for_ci_demonstration)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2912013Z Deliberate failing assertion to demonstrate CI failure reporting.
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2912881Z ----------------------------------------------------------------------
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2913507Z Traceback (most recent call last):
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2922412Z   File "/home/runner/work/studenttaskmanager/studenttaskmanager/tests/test_task_manager.py", line 73, in test_intentional_failure_for_ci_demonstration
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2923418Z     self.assertEqual("devops_green_ci", "devops_red_ci_failure",
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2923922Z AssertionError: 'devops_green_ci' != 'devops_red_ci_failure'
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2924415Z - devops_green_ci
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2924734Z + devops_red_ci_failure
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2925073Z  : Deliberate test failure for CI failure demonstration
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2925409Z 
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2925624Z ----------------------------------------------------------------------
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2926044Z Ran 6 tests in 0.001s
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2926195Z 
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2926472Z FAILED (failures=1)
+test (3.12)	Run Automated Unit Tests	2026-11-18T07:42:47.2990736Z ##[error]Process completed with exit code 1.
