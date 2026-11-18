@@ -29,10 +29,13 @@ def run():
         choice = input("Select an option (1-5): ").strip()
 
         if choice == "1":
-            title = input("Task title: ")
-            desc = input("Description (press Enter to skip): ")
-            task = mgr.add_task(title, desc)
-            print(f"  -> Task #{task.task_id} created: {task.title}")
+            title = input("Task title: ").strip()
+            desc = input("Description (press Enter to skip): ").strip()
+            try:
+                task = mgr.add_task(title, desc)
+                print(f"  -> Task #{task.task_id} created: {task.title}")
+            except ValueError as err:
+                print(f"  ** Validation error: {err}")
 
         elif choice == "2":
             all_tasks = mgr.list_tasks()
