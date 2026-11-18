@@ -68,11 +68,6 @@ class TestTaskManager(unittest.TestCase):
         """Test deleting a non-existent task returns False."""
         self.assertFalse(self.manager.delete_task(9999))
 
-    def test_intentional_failure_for_ci_demonstration(self):
-        """Deliberate failing assertion to demonstrate CI failure reporting."""
-        self.assertEqual("devops_green_ci", "devops_red_ci_failure",
-                         "Deliberate test failure for CI failure demonstration")
-
 
 if __name__ == "__main__":
     unittest.main()
