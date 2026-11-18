@@ -103,13 +103,20 @@ class TaskManager:
         return True
 
     def delete_task(self, task_id):
-        """Remove a task by ID. Returns True on success, False if not found."""
-        before = len(self.tasks)
+        """Remove a task by its numeric ID.
+
+        Args:
+            task_id: Numeric identifier of the task to remove.
+
+        Returns:
+            True if the task existed and was removed, False if no such ID.
+        """
+        target = self.find_task(task_id)
+        if target is None:
+            return False
         self.tasks = [t for t in self.tasks if t.task_id != task_id]
-        if len(self.tasks) < before:
-            self._save_tasks()
-            return True
-        return False
+        self._save_tasks()
+        return True
 
     def _save_tasks(self):
         """Persist all tasks to the JSON storage file."""
