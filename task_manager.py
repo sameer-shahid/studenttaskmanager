@@ -59,7 +59,14 @@ class TaskManager:
         return max(t.task_id for t in self.tasks) + 1
 
     def add_task(self, title, description=""):
-        """Create and store a new task. Returns the created Task object."""
+        """Create and store a new task. Returns the created Task object.
+
+        Raises:
+            ValueError: If the title is empty or contains only whitespace.
+        """
+        if not title or not title.strip():
+            raise ValueError("Task title cannot be empty or whitespace.")
+        title = title.strip()
         new_task = Task(self._next_id(), title, description)
         self.tasks.append(new_task)
         self._save_tasks()
